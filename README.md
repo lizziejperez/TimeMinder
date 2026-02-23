@@ -4,6 +4,12 @@ TimeMinder is a cross-platform mobile app built with React Native that allows us
 
 Built as a real-use application to help track birthdays, anniversaries, memorial dates, and important life events.
 
+## Client Context
+
+TimeMinder is being developed for a real client with specific personal use requirements.
+
+The application is built with ongoing user feedback, usability testing, and iterative refinement to ensure clarity and reliability in daily use.
+
 ## Features (Planned & In Progress)
 
 - Create and store multiple countdowns locally
