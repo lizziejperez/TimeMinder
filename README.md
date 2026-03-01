@@ -1,38 +1,61 @@
-# TimeMinder App
+# TimeMinder
 
-TimeMinder is a cross-platform mobile app built with React Native that allows users to track meaningful dates and view dynamic countdowns.
+TimeMinder is a cross-platform mobile app built with React Native that allows users to track meaningful dates and view dynamic time-based insights.
 
-Built as a real-use application to help track birthdays, anniversaries, memorial dates, and important life events.
+The app supports both:
+
+- Birthdays (current age + days until next birthday)
+- General countdown events (days left / days since)
+
+Built as a real-use application for a client with ongoing feedback and iterative refinement.
 
 ## Client Context
 
 TimeMinder is being developed for a real client with specific personal use requirements.
 
-The application is built with ongoing user feedback, usability testing, and iterative refinement to ensure clarity and reliability in daily use.
+The project is guided by:
+- Direct user feedback
+- Practical daily usage testing
+- Iterative scope adjustments
 
-## Features (Planned & In Progress)
+This ensures the architecture supports real-world needs rather than hypothetical features.
 
-- Create and store multiple countdowns locally
-- View "X days left" for future dates
-- View "X days since" for past dates
-- Edit and delete countdowns
-- Sort by soonest upcoming date
-- Optional recurring yearly dates (e.g., birthdays)
-- Optional reminders / notifications
+## Current Features (Phase 1 Complete)
+
+- Flexible tracked-date data model
+- Birthday support:
+  - Current age calculation
+  - Days until next birthday
+- Countdown support:
+  - Days left for future dates
+  - Days since past dates
+- Reusable card-based UI architecture
+- Strict TypeScript typing
+- Mock data before persistence
+
+## Planned Features
+
+- Create and store multiple tracked dates locally
+- Add date entry screen
+- Edit and delete flow
+- Sort by upcoming date
+- Recurring yearly toggle
+- Local notifications / reminders
+- AsyncStorage persistence
 
 ## Tech Stack
 
 - **React Native**
 - **Expo**
 - **TypeScript**
-- Local device storage (AsyncStorage or equivalent)
+- Local device storage (planned: AsyncStorage)
 
 ## Development Setup
 
 ### Prerequisites
 
 - Node.js (LTS recommended)
-- Expo Go app installed on a mobile device or Android/iOS emulator
+- Expo Go (iOS / Android)
 
 ### Install Dependencies
 
@@ -43,7 +66,7 @@ npm install
 ### Run Development Server
 
 ```bash
-npm run start
+npm expo start
 ```
 
 Scan the QR code using Expo Go to run on a physical device.
@@ -53,37 +76,62 @@ Scan the QR code using Expo Go to run on a physical device.
 ```
 src/
   components/    # Reusable UI components
-  screens/       # Main app screens
+  screens/       # App-level screens
   models/        # TypeScript data models
-  storage/       # Local persistence logic
-  utils/         # Date calculation helpers
+  storage/       # Sample/mock data (Phase 1)
+  utils/         # Date calculation logic
 ```
+
+## Architectural Principles
+
+- Separation of concerns (UI vs business logic)
+- Typed data models to drive UI behavior
+- Reusable components
+- ISO date handling for reliability
+- Midnight normalization to prevent off-by-one errors
 
 ## Project Goals
 
 This project focuses on:
 
-- Learning React fundamentals in a mobile environment
-- Implementing local persistence
-- Building clean, maintainable component architecture
-- Handling date logic and edge cases (past dates, sorting, recurring events)
+- Learning React Native through real product development
+- Practicing clean architecture with TypeScript
+- Handling date logic correctly and safely
+- Building features iteratively based on real feedback
 
 ## Roadmap
 
-### MVP
+### Phase 1 — Core Architecture (Complete)
 
-- Countdown list screen
-- Add countdown screen
-- Local persistence
-- Basic sorting logic
+- Flexible tracked-date data model
+- Birthday age calculation
+- Countdown formatting
+- Reusable card UI
+- Mock data rendering
 
-### Enhancements
+### Phase 2 — User Input & Navigation
 
-- Recurring events toggle
-- Edit/Delete flow
-- Notification reminders
-- UI polish and accessibility improvements
+- Add tracked-date screen
+- Date type selector (Birthday / Countdown)
+- Stack navigation setup
+- In-memory state management
 
-## Notes
+### Phase 3 — Persistence
 
-TimeMinder is being built as a practical, user-focused project while deepening knowledge of React and React Native.
+- AsyncStorage integration
+- Load/save tracked dates locally
+- Data hydration on app start
+
+### Phase 4 — Usability Enhancements
+
+- Sorting (upcoming first)
+- Edit / Delete flow
+- Recurring yearly toggle
+- Visual tone styling (future / past)
+- Empty state UX polish
+
+### Phase 5 — Advanced Features
+
+- Local notifications
+- Accessibility improvements
+- UI refinement and micro-interactions
